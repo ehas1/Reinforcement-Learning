@@ -1,9 +1,8 @@
-# Reinforcement-Learning
-Exploring Sutton and Barlo's Second Edition of Reinforcement Learning. 
+# RL Policy Iteration Comparison
 
 A comprehensive implementation and visualization of various reinforcement learning algorithms, focusing on policy iteration methods across different test environments. This project compares the performance of Q-Learning, SARSA, Monte Carlo ES, and Value Iteration algorithms in challenging grid world environments.
 
-## Features
+## 🌟 Features
 
 - **Multiple RL Algorithms Implementation**
   - Q-Learning
@@ -22,7 +21,7 @@ A comprehensive implementation and visualization of various reinforcement learni
   - Performance comparisons
   - Interactive HTML dashboards
 
-## Requirements
+## 📋 Requirements
 
 ```bash
 numpy
@@ -33,7 +32,7 @@ seaborn
 json
 ```
 
-## Getting Started
+## 🚀 Getting Started
 
 1. Clone the repository:
 ```bash
@@ -51,7 +50,7 @@ pip install -r requirements.txt
 python grid_world_comparison.py
 ```
 
-## Project Structure
+## 📊 Project Structure
 
 - `grid_world_comparison.py`: Main script for running algorithm comparisons
 - `rl_algorithms.py`: Core implementations of RL algorithms
@@ -59,7 +58,7 @@ python grid_world_comparison.py
 - `environment_tests.py`: Environment definitions and test configurations
 - `combined_results.html`: Interactive visualization dashboard
 
-## Results
+## 📈 Results
 
 The project includes comprehensive visualizations and comparisons of algorithm performance across different environments:
 
@@ -68,7 +67,7 @@ The project includes comprehensive visualizations and comparisons of algorithm p
 - Algorithm comparison analysis
 - Interactive HTML dashboards for detailed exploration
 
-## Contributing
+## 🤝 Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
