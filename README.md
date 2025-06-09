@@ -51,7 +51,7 @@ pip install -r requirements.txt
 python grid_world_comparison.py
 ```
 
-## 📊 Project Structure
+## Project Structure
 
 - `grid_world_comparison.py`: Main script for running algorithm comparisons
 - `rl_algorithms.py`: Core implementations of RL algorithms
