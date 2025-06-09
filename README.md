@@ -16,15 +16,15 @@ A comprehensive implementation and visualization of various reinforcement learni
   - Stochastic Rewards Environment
 
 - **Rich Visualizations**
-  - Interactive learning curve plots with confidence intervals
-  - Dynamic 3D optimal path visualizations
-  - Real-time performance comparisons
-  - Interactive HTML dashboards
+  - Learning curve plots with confidence intervals
+  - Grid world comparisons in 2D and 3D
+  - Performance analysis visualizations
+  - Optimal path comparisons
 
 ## Key Findings
 
-### Dynamic Performance Analysis
-Our dynamic performance dashboard (`dynamic_performance_dashboard.html`) reveals several interesting patterns:
+### Performance Analysis
+Our analysis reveals several interesting patterns:
 
 - **Algorithm Convergence**:
   - Q-Learning shows fastest initial learning in sparse reward environments
@@ -38,7 +38,7 @@ Our dynamic performance dashboard (`dynamic_performance_dashboard.html`) reveals
   - Sparse rewards: Monte Carlo ES demonstrates competitive final results
 
 ### Optimal Path Analysis
-The dynamic optimal paths visualization (`dynamic_optimal_paths_3d.html`) shows:
+The optimal paths visualization shows:
 
 - **Path Optimization**:
   - Progressive improvement in path efficiency over training
@@ -65,8 +65,8 @@ pytest>=6.2.0
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/rl-policy-iteration-comparison.git
-cd rl-policy-iteration-comparison
+git clone https://github.com/ehas1/Reinforcement-Learning.git
+cd Reinforcement-Learning
 ```
 
 2. Install dependencies:
@@ -79,24 +79,23 @@ pip install -r requirements.txt
 python grid_world_comparison.py
 ```
 
-## Interactive Visualizations
+## Visualizations
 
-This repository includes interactive HTML visualizations that can be viewed in any modern web browser:
+This repository includes key visualizations:
 
-1. `dynamic_performance_dashboard.html`
-   - Real-time performance metrics
-   - Learning curve comparisons
-   - Environment-specific analysis
+1. `grid_world_comparison_2d.png` and `grid_world_comparison_3d.png`
+   - 2D and 3D representations of the grid world
+   - Algorithm performance comparisons
+   - State-value function visualization
 
-2. `dynamic_optimal_paths_3d.html`
-   - 3D visualization of optimal paths
-   - Training progression visualization
-   - Algorithm behavior comparison
+2. `enhanced_comparison_3d.png`
+   - Detailed 3D visualization of algorithm performance
+   - Comparative analysis across environments
 
-To view the visualizations:
-1. Clone the repository
-2. Open the HTML files in a web browser
-3. Interact with the plots to explore different aspects of the results
+3. `optimal_paths_comparison.png`
+   - Visual comparison of optimal paths
+   - Algorithm behavior analysis
+   - Policy convergence demonstration
 
 ## Contributing
 
