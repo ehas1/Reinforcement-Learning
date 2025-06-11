@@ -2,6 +2,8 @@
 
 A comprehensive implementation and visualization of various reinforcement learning algorithms, focusing on policy iteration methods across different test environments. This project compares the performance of Q-Learning, SARSA, Monte Carlo ES, and Value Iteration algorithms in challenging grid world environments.
 
+Ideas based on Sutton and Barlo's Second Edition on Reinforcement Learning.
+
 ## Features
 
 - **Multiple RL Algorithms Implementation**
