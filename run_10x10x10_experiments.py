@@ -202,21 +202,76 @@ def run_experiments():
     return results
 
 def plot_learning_curves(results):
-    plt.figure(figsize=(12, 6))
+    plt.figure(figsize=(15, 8))
     
-    colors = {'n1': 'red', 'n3': 'blue', 'n5': 'green'}
+    # Style settings
+    colors = {
+        'n1': '#FF6B6B',  # Coral red
+        'n3': '#4ECDC4',  # Turquoise
+        'n5': '#45B7D1'   # Sky blue
+    }
+    algo_styles = {
+        'qlearning': {'linestyle': '-', 'alpha': 0.8},
+        'sarsa': {'linestyle': '--', 'alpha': 0.8}
+    }
     
+    # Set background color
+    plt.gca().set_facecolor('#f8f9fa')
+    plt.gcf().set_facecolor('white')
+    
+    # Calculate moving averages for smoother curves
+    window = 20
     for algo in ['qlearning', 'sarsa']:
         for n in ['n1', 'n3', 'n5']:
             rewards = results[algo]['rewards'][n]
-            plt.plot(rewards, label=f'{algo} ({n})', color=colors[n], linestyle='-' if algo == 'qlearning' else '--')
+            moving_avg = np.convolve(rewards, np.ones(window)/window, mode='valid')
+            
+            # Plot with enhanced styling
+            plt.plot(moving_avg, 
+                    label=f'{algo.upper()} (n={n[-1]})',
+                    color=colors[n],
+                    linestyle=algo_styles[algo]['linestyle'],
+                    alpha=algo_styles[algo]['alpha'],
+                    linewidth=2)
     
-    plt.xlabel('Episode')
-    plt.ylabel('Total Reward')
-    plt.title('Learning Curves - 10x10x10 Grid World')
-    plt.legend()
-    plt.grid(True)
-    plt.savefig('learning_curves_10x10x10.png')
+    # Enhance the plot appearance
+    plt.xlabel('Episode', fontsize=12, fontweight='bold')
+    plt.ylabel('Average Reward (Moving Window)', fontsize=12, fontweight='bold')
+    plt.title('Learning Curves - 10x10x10 Grid World\n(20-Episode Moving Average)', 
+             fontsize=14, fontweight='bold', pad=20)
+    
+    # Customize grid
+    plt.grid(True, linestyle='--', alpha=0.7, color='gray')
+    
+    # Customize legend
+    plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left', 
+              borderaxespad=0., frameon=True, 
+              fancybox=True, shadow=True)
+    
+    # Add text box with environment details
+    info_text = 'Environment Details:\n' + \
+                '• Grid Size: 10x10x10\n' + \
+                '• Moving Obstacles: 5\n' + \
+                '• Max Steps: 500\n' + \
+                '• Goal Reward: +100\n' + \
+                '• Collision Penalty: -10\n' + \
+                '• Step Penalty: -1'
+    
+    plt.text(1.25, 0.3, info_text,
+             bbox=dict(facecolor='white', alpha=0.8, edgecolor='gray'),
+             transform=plt.gca().transAxes,
+             fontsize=10,
+             verticalalignment='center')
+    
+    # Adjust layout to prevent text cutoff
+    plt.tight_layout()
+    
+    # Save with high quality
+    plt.savefig('learning_curves_10x10x10.png', 
+                dpi=300, 
+                bbox_inches='tight',
+                facecolor='white',
+                edgecolor='none')
     plt.close()
 
 def plot_value_convergence(results):
