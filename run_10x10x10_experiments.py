@@ -348,28 +348,6 @@ def plot_value_convergence(results):
     plt.savefig('convergence_analysis_10x10x10.png', dpi=300, bbox_inches='tight')
     plt.close()
 
-def plot_reward_distributions(results):
-    plt.figure(figsize=(12, 6))
-    
-    # Create violin plots for reward distributions
-    data = []
-    labels = []
-    for algo in ['qlearning', 'sarsa']:
-        for n in ['n1', 'n3', 'n5']:
-            rewards = results[algo]['rewards'][n]
-            data.append(rewards)
-            labels.append(f'{algo.upper()}\nn={n[-1]}')
-    
-    plt.violinplot(data, showmeans=True)
-    plt.xticks(range(1, len(labels) + 1), labels, rotation=45)
-    plt.ylabel('Total Episode Reward')
-    plt.title('Reward Distribution Comparison')
-    plt.grid(True)
-    
-    plt.tight_layout()
-    plt.savefig('reward_distributions_10x10x10.png', dpi=300, bbox_inches='tight')
-    plt.close()
-
 def generate_3d_visualization(results):
     # Create the visualization data structure
     vis_data = {
