@@ -13,7 +13,6 @@ from rl_algorithms import policy_iteration_generic as policy_iteration
 from rl_algorithms import run_episode_generic as run_episode
 
 class StochasticRewardGrid(gym.Env):
-    """Grid world with stochastic rewards and delayed feedback."""
     
     def __init__(self, dims=(4, 4), reward_variance=0.5, delay_prob=0.2):
         super().__init__()
