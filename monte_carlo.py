@@ -21,7 +21,6 @@ class MonteCarloES:
         state_action_pairs = [(state, action) for state, action, _ in episode]
         returns = 0
         
-        # Process episode in reverse order
         for t in range(len(episode)-1, -1, -1):
             state, action, reward = episode[t]
             returns = self.gamma * returns + reward
