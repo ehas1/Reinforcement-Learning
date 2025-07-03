@@ -5,6 +5,7 @@ from environments import StochasticObstacle3DWorld
 from n_step_algorithms import NStepQLearning, NStepSARSA, NStepExpectedSARSA
 
 def run_experiment(env, agent, n_episodes=100, max_steps=200):
+    """Run a single experiment with an agent."""
     episode_rewards = []
     success_rates = []
     value_history = []
