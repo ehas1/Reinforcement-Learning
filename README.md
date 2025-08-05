@@ -21,7 +21,7 @@ Ideas based on Sutton and Barto's Second Edition on Reinforcement Learning. Util
   - Learning curve plots with confidence intervals
   - Grid world comparisons in 2D and 3D
   - Performance analysis visualizations
-  - Optimal path comparisons
+  - Optimal path comparisons and visuals
 
 ## Key Findings
 
