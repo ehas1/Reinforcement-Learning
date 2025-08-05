@@ -1,6 +1,5 @@
 import numpy as np
 from collections import defaultdict
-import itertools
 
 def value_iteration_generic(env, gamma=0.99, theta=0.0001, max_iterations=1000):
     """
